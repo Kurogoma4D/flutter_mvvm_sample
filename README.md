@@ -1,0 +1,7 @@
+# flutter_mvvm_sample
+MVVMパターンをFlutterっぽく実装した一例．
+
+StateNotifierをModel，ChangeNotifierをViewModelとした上で，Stateの変更通知をstate_notifier v0.6.0から提供された `StateNotifier.stream` を使って行うパターン．
+もはやStateNotifierを使う必要はない気がするがご愛嬌．
+
+`counter` サンプルはカウント機能を持ったViewModelと，それをSharedPreferenceに保存・読み込みができるModelで構成されたシンプルなものになっている．
