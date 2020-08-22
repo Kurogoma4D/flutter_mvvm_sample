@@ -33,12 +33,11 @@ class CounterController extends StateNotifier<CounterState> {
     );
   }
 
-  void saveState(int count) async {
+  void saveState(int count, DateTime timeStamp) async {
     final prefs = await SharedPreferences.getInstance();
-    final now = DateTime.now();
     prefs.setInt(COUNT_KEY, count);
-    prefs.setString(TIMESTAMP_KEY, now.toIso8601String());
+    prefs.setString(TIMESTAMP_KEY, timeStamp.toIso8601String());
 
-    state = state.copyWith(count: count, savedAt: now);
+    state = state.copyWith(count: count, savedAt: timeStamp);
   }
 }

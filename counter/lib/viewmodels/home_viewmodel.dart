@@ -31,6 +31,6 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   void save() {
-    read<CounterController>().saveState(count);
+    read<CounterController>().saveState(count, DateTime.now());
   }
 }
